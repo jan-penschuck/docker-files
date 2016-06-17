@@ -1,0 +1,14 @@
+publish:
+  docker:
+    repo: registry.gruppenrat:5000/postfix-dbmail
+    file: postfix-dbmail/Dockerfile
+    insecure: true
+    tag: latest
+    registry: registry.gruppenrat:5000
+    load: docker/postfix-dbmail-image.tar
+    save:
+      destination: docker/postfix-dbmail-image.tar
+      tag: latest
+cache:
+  mount:
+    - docker/postfix-dbmail-image.tar
