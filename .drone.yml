@@ -12,3 +12,33 @@ publish:
 cache:
   mount:
     - docker/postfix-dbmail-image.tar
+
+publish:
+  docker:
+    repo: registry.gruppenrat:5000/php-fpm
+    file: php-fpm/Dockerfile
+    insecure: true
+    tag: latest
+    registry: registry.gruppenrat:5000
+    load: docker/php-fpm-image.tar
+    save:
+      destination: docker/php-fpm-image.tar
+      tag: latest
+cache:
+  mount:
+    - docker/php-fpm-image.tar
+
+publish:
+  docker:
+    repo: registry.gruppenrat:5000/s3ql
+    file: s3ql/Dockerfile
+    insecure: true
+    tag: latest
+    registry: registry.gruppenrat:5000
+    load: docker/s3ql-image.tar
+    save:
+      destination: docker/s3ql-image.tar
+      tag: latest
+cache:
+  mount:
+    - docker/s3ql-image.tar
