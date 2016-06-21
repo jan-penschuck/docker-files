@@ -103,3 +103,6 @@ RUN docker-php-ext-install -j$(nproc) pcntl
 RUN apt-get update && apt-get install -y \
         libtidy-dev \
     && docker-php-ext-install -j$(nproc) tidy
+
+RUN apt-get update && apt-get install -y \
+        cron

@@ -30,15 +30,15 @@ cache:
 
 publish:
   docker:
-    repo: registry.gruppenrat:5000/s3ql
-    file: s3ql/Dockerfile
+    repo: registry.gruppenrat:5000/caddy
+    file: caddy/Dockerfile
     insecure: true
     tag: latest
     registry: registry.gruppenrat:5000
-    load: docker/s3ql-image.tar
+    load: docker/caddy-image.tar
     save:
-      destination: docker/s3ql-image.tar
+      destination: docker/caddy-image.tar
       tag: latest
 cache:
   mount:
-    - docker/s3ql-image.tar
+    - docker/caddy-image.tar
