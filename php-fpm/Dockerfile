@@ -108,3 +108,5 @@ RUN apt-get install -y \
 
 RUN apt-get install -y \
         cron nano
+
+ADD run.sh /usr/local/bin/
