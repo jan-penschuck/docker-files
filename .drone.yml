@@ -5,13 +5,6 @@ publish:
     insecure: true
     tag: latest
     registry: registry.gruppenrat:5000
-    load: docker/postfix-dbmail-image.tar
-    save:
-      destination: docker/postfix-dbmail-image.tar
-      tag: latest
-cache:
-  mount:
-    - docker/postfix-dbmail-image.tar
 
 publish:
   docker:
@@ -20,13 +13,6 @@ publish:
     insecure: true
     tag: latest
     registry: registry.gruppenrat:5000
-    load: docker/php-fpm-image.tar
-    save:
-      destination: docker/php-fpm-image.tar
-      tag: latest
-cache:
-  mount:
-    - docker/php-fpm-image.tar
 
 publish:
   docker:
@@ -35,10 +21,3 @@ publish:
     insecure: true
     tag: latest
     registry: registry.gruppenrat:5000
-    load: docker/caddy-image.tar
-    save:
-      destination: docker/caddy-image.tar
-      tag: latest
-cache:
-  mount:
-    - docker/caddy-image.tar
