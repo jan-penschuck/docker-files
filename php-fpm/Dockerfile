@@ -105,4 +105,4 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) tidy
 
 RUN apt-get update && apt-get install -y \
-        cron
+        cron nano
