@@ -1,5 +1,7 @@
 FROM janeczku/alpine-kubernetes:latest
 
+MAINTAINER sneak
+
 RUN apk update \
     && apk upgrade
 RUN apk add --no-cache git curl ca-certificates \

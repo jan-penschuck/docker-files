@@ -1,5 +1,7 @@
 FROM php:fpm
 
+MAINTAINER sneak
+
 RUN apt-get update
 
 # Install mcrypt

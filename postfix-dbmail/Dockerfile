@@ -1,5 +1,7 @@
 FROM derjudge/archlinux:latest
 
+MAINTAINER sneak
+
 RUN pacman -Sy
 RUN pacman -S --noconfirm \
         dbmail \

@@ -1,6 +1,6 @@
 publish:
   docker:
-    repo: registry.gruppenrat:5000/postfix-dbmail
+    repo: gruppenrat.net/postfix-dbmail
     file: postfix-dbmail/Dockerfile
     insecure: true
     tag: latest
@@ -8,7 +8,7 @@ publish:
 
 publish:
   docker:
-    repo: registry.gruppenrat:5000/php-fpm
+    repo: gruppenrat.net/php-fpm
     file: php-fpm/Dockerfile
     insecure: true
     tag: latest
@@ -16,8 +16,16 @@ publish:
 
 publish:
   docker:
-    repo: registry.gruppenrat:5000/caddy
+    repo: gruppenrat.net/caddy
     file: caddy/Dockerfile
+    insecure: true
+    tag: latest
+    registry: registry.gruppenrat:5000
+
+publish:
+  docker:
+    repo: gruppenrat.net/s3ql
+    file: s3ql/Dockerfile
     insecure: true
     tag: latest
     registry: registry.gruppenrat:5000

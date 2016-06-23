@@ -1,5 +1,7 @@
 FROM debian:stretch
 
+MAINTAINER sneak
+
 ENV     DEBIAN_FRONTEND=noninteractive
 
 RUN     apt-get update \
