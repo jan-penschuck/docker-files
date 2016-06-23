@@ -21,3 +21,9 @@ publish:
     insecure: true
     tag: latest
     registry: registry.gruppenrat:5000
+
+notify:
+  webhook:
+    urls:
+      - http://webhook.gruppenrat:3142/drone
+
