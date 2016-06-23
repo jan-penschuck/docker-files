@@ -10,7 +10,7 @@ RUN     apt-get update \
         && apt-get clean
 RUN     mkdir /data /volume /root/.s3ql
 RUN     chmod a+rwx /data /volume
-COPY    authinfo2 /root/.s3ql/authinfo2 
+COPY    s3ql/authinfo2 /root/.s3ql/authinfo2 
 RUN     chmod 600 /root/.s3ql/authinfo2
 RUN     cd /usr/local/bin \
         && wget -qqq https://github.com/TentativeConvert/Syndicator/raw/master/unison-binaries/unison-fsmonitor \
