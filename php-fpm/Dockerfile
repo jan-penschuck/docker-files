@@ -110,3 +110,5 @@ RUN apt-get install -y \
         cron vim sudo
 
 ADD php-fpm/run.sh /usr/local/bin/
+
+WORKDIR /srv
