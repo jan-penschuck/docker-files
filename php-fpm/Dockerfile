@@ -107,6 +107,6 @@ RUN apt-get install -y \
     && docker-php-ext-install -j$(nproc) tidy
 
 RUN apt-get install -y \
-        cron nano
+        cron vim sudo
 
-ADD run.sh /usr/local/bin/
+ADD php-fpm/run.sh /usr/local/bin/
