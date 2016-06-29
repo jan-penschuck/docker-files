@@ -39,7 +39,7 @@ RUN apt-get install -y \
         libmcrypt-dev \
         libicu-dev \
         libc-client2007e-dev \
-        krb5-dev
+        imap-dev
 
 RUN docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu \ 
     && docker-php-ext-install -j$(nproc) ldap
