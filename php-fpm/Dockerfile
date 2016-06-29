@@ -65,7 +65,9 @@ RUN docker-php-ext-install -j$(nproc) pdo_pgsql \
         enchant \
         pcntl \
         tidy \
-        gettext
+        gettext \
+        imap \
+        iconv
 
 RUN apt-get install -y \
         cron vim sudo
