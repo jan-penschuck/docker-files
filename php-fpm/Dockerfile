@@ -2,6 +2,8 @@ FROM alpine:edge
 
 MAINTAINER sneak
 
+RUN echo "http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+
 RUN apk update \
     && apk upgrade
 
