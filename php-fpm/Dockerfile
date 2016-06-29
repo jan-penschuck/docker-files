@@ -61,7 +61,7 @@ RUN apk add --no-cache php7 \
         php7-sockets \
         php7-readline \
         php7-exif \
-        cron \
+        busybox-suid \
         vim \
         sudo \
         libreoffice
