@@ -41,7 +41,8 @@ RUN apt-get install -y \
 
 RUN docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu \ 
     && docker-php-ext-install -j$(nproc) ldap
-    && docker-php-ext-install -j$(nproc) pdo_pgsql \
+
+RUN docker-php-ext-install -j$(nproc) pdo_pgsql \
         pgsql \
         mysqli \
         pdo_mysql \
