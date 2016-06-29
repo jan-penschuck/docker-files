@@ -1,84 +1,70 @@
-FROM php:fpm
+FROM alpine:edge
 
 MAINTAINER sneak
 
-RUN apt-get update
+RUN apk update \
+    && apk upgrade
 
-# Install mongodb
-RUN apt-get install -y \
-        libssl-dev \
-    && pecl install mongodb \
-    && docker-php-ext-enable mongodb
-
-# Install gd
-RUN apt-get install -y \
-        libfreetype6-dev \
-        libjpeg62-turbo-dev \
-        libpng12-dev \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install -j$(nproc) gd
-
-# Install redis
-ENV PHPREDIS_VERSION=php7
-RUN cd /usr/src/php/ext \
-    && curl -q https://codeload.github.com/phpredis/phpredis/tar.gz/$PHPREDIS_VERSION | tar -xz \
-    && docker-php-ext-install phpredis-$PHPREDIS_VERSION
-
-# Install ldap
-RUN apt-get install -y \
-        libldap2-dev \
-        libpq-dev \
-        libbz2-dev \
-        libcurl4-openssl-dev \
-        libxml2-dev \
-        libxslt1-dev \
-        libpspell-dev \
-        libedit-dev \
-        libenchant-dev \
-        libtidy-dev \
-        libmcrypt-dev \
-        libicu-dev \
-        libc-client2007e-dev \
-        libkrb5-dev
-
-RUN docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu \ 
-    && docker-php-ext-install -j$(nproc) ldap
-
-RUN docker-php-ext-install -j$(nproc) pdo_pgsql \
-        pgsql \
-        mysqli \
-        pdo_mysql \
-        opcache \
-        zip \
-        bcmath \
-        bz2 \
-        calendar \
-        curl \
-        exif \
-        json \
-        xml \
-        xmlrpc \
-        xsl \
-        pspell \
-        readline \
-        mcrypt \
-        intl \
-        fileinfo \
-        enchant \
-        pcntl \
-        tidy \
-        gettext \
-        imap \
-        iconv \
-        dom \
-        session \
-        ctype \
-        phar \
-        mbstring
-
-RUN apt-get install -y \
-        cron vim sudo
+RUN apk add --no-cache php7 \
+        php7-wddx \
+        php7-snmp \
+        php7-phar \
+        php7-xmlreader
+        php7-zip \
+        php7-gd \
+        php7-pdo_sqlite \
+        php7-imap \
+        php7-gmp \
+        php7-bcmath \
+        php7-enchant \
+        php7-mysqli \
+        php7-pear \
+        php7-session \
+        php7-xsl \
+        php7-dom \
+        php7-curl \
+        php7-iconv \
+        php7-gettext \
+        php7-pdo_pgsql \
+        php7-common \
+        php7-json \
+        php7-sysvsem \
+        php7-calendar \
+        php7-posix \
+        php7-pdo \
+        php7-tidy \
+        php7-ldap \
+        php7-pgsql \
+        php7-pdo_mysql \
+        php7-mbstring \
+        php7-ctype \
+        php7-pdo_dblib \
+        php7-pcntl \
+        php7-fpm \
+        php7-bz2 \
+        php7-openssl \
+        php7-sysvshm \
+        php7-ftp \
+        php7-mcrypt \
+        php7-intl \
+        php7-pspell \
+        php7-xmlrpc \
+        php7-zlib \
+        php7-xml \
+        php7-sysvmsg \
+        php7-opcache \
+        php7-dba \
+        php7-shmop \
+        php7-mysqlnd \
+        php7-sockets \
+        php7-readline \
+        php7-exif
+        cron \
+        vim \
+        sudo \
+        libreoffice
 
 ADD php-fpm/run.sh /usr/local/bin/
 
 WORKDIR /srv
+
