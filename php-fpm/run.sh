@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cron && php-fpm
+crond -d 8 && php-fpm7
