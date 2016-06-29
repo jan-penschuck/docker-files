@@ -66,6 +66,12 @@ RUN apk add --no-cache php7 \
         sudo \
         libreoffice
 
+RUN rm -rf \
+      /usr/share/doc \
+      /usr/share/man \
+      /tmp/* \
+      /var/cache/apk/*
+
 ADD php-fpm/run.sh /usr/local/bin/
 
 WORKDIR /srv
