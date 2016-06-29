@@ -60,7 +60,7 @@ RUN apk add --no-cache php7 \
         php7-mysqlnd \
         php7-sockets \
         php7-readline \
-        php7-exif
+        php7-exif \
         cron \
         vim \
         sudo \
