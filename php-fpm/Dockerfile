@@ -38,7 +38,8 @@ RUN apt-get install -y \
         libtidy-dev \
         libmcrypt-dev \
         libicu-dev \
-        libc-client2007e-dev
+        libc-client2007e-dev \
+        krb5-dev
 
 RUN docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu \ 
     && docker-php-ext-install -j$(nproc) ldap
@@ -68,7 +69,12 @@ RUN docker-php-ext-install -j$(nproc) pdo_pgsql \
         tidy \
         gettext \
         imap \
-        iconv
+        iconv \
+        dom \
+        session \
+        ctype \
+        phar \
+        mbstring
 
 RUN apt-get install -y \
         cron vim sudo
