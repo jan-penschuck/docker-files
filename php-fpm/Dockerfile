@@ -67,6 +67,11 @@ RUN apk add --no-cache php7 \
         php7-gmagick \
         php7-uuid \
         php7-oauth \
+        php7-memcached \
+        php7-timezonedb \
+        php7-lzf \
+        php7-msgpack \
+        php7-mailparse \
         busybox-suid \
         vim \
         sudo \
