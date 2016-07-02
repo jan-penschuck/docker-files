@@ -77,6 +77,8 @@ RUN apk add --no-cache php7 \
         sudo \
         libreoffice
 
+RUN pear install Net_LDAP2
+
 RUN rm -rf \
       /usr/share/doc \
       /usr/share/man \
