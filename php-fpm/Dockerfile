@@ -79,7 +79,10 @@ RUN apk add --no-cache busybox-suid \
         vim \
         sudo \
         libreoffice \
-        py-pip
+        python \
+        python-dev \
+        py-pip \
+        build-base
 
 RUN pip install gpxpy geojson
 
