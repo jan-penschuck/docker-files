@@ -59,7 +59,6 @@ RUN apk add --no-cache php7 \
         php7-shmop \
         php7-mysqlnd \
         php7-sockets \
-        php7-readline \
         php7-exif \
         php7-redis \
         php7-mongodb \
@@ -80,14 +79,9 @@ RUN apk add --no-cache busybox-suid \
         vim \
         sudo \
         libreoffice \
-        python3 \
-        python3-dev \
-        py-setuptools \
-        py-pip
+        python3
 
-RUN pip install --upgrade pip
-
-RUN pip install gpxpy geojson
+RUN pip3 install gpxpy geojson
 
 RUN rm -rf \
       /usr/share/doc \
