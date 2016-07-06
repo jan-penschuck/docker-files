@@ -85,9 +85,9 @@ RUN apk add --no-cache busybox-suid \
         py-setuptools \
         py-pip
 
-RUN pip3.4 install --upgrade pip
+RUN pip install --upgrade pip
 
-RUN pip3.4 install gpxpy geojson
+RUN pip install gpxpy geojson
 
 RUN rm -rf \
       /usr/share/doc \
