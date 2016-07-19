@@ -33,5 +33,4 @@ publish:
 notify:
   webhook:
     urls:
-      - http://webhook.gruppenrat:3142/drone
-
+      - http://webhook.gruppenrat:3141/drone

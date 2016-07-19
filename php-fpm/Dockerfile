@@ -59,7 +59,6 @@ RUN apk add --no-cache php7 \
         php7-shmop \
         php7-mysqlnd \
         php7-sockets \
-        php7-readline \
         php7-exif \
         php7-redis \
         php7-mongodb \
@@ -72,12 +71,17 @@ RUN apk add --no-cache php7 \
         php7-lzf \
         php7-msgpack \
         php7-mailparse \
-        busybox-suid \
-        vim \
-        sudo \
-        libreoffice
+        php7-apcu
 
 RUN pear install Net_LDAP2
+
+RUN apk add --no-cache busybox-suid \
+        vim \
+        sudo \
+        libreoffice \
+        python3
+
+RUN pip3 install gpxpy geojson
 
 RUN rm -rf \
       /usr/share/doc \
