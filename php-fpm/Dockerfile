@@ -75,7 +75,8 @@ RUN apk add --no-cache php7 \
         busybox-suid \
         vim \
         sudo \
-        libreoffice
+        libreoffice \
+        bash
 
 RUN pear install Net_LDAP2
 
