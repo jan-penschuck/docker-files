@@ -77,6 +77,7 @@ RUN pear install Net_LDAP2
 
 RUN apk add --no-cache busybox-suid \
         vim \
+        bash \
         sudo \
         libreoffice \
         python3
