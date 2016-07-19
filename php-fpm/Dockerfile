@@ -75,8 +75,7 @@ RUN apk add --no-cache php7 \
         busybox-suid \
         vim \
         sudo \
-        libreoffice \
-        bash
+        libreoffice
 
 RUN pear install Net_LDAP2
 
@@ -89,4 +88,3 @@ RUN rm -rf \
 ADD php-fpm/run.sh /usr/local/bin/
 
 WORKDIR /srv
-
