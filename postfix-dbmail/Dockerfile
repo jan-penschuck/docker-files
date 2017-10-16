@@ -10,7 +10,7 @@ RUN pacman -S --noconfirm \
         syslog-ng \
         json-c 
 RUN pacman -Scc --noconfirm
-RUN useradd dbmail &&  mkdir /var/run/dbmail /var/log/dbmail && chown dbmail:dbmail /var/run/dbmail /var/log/dbmail
+RUN useradd dbmail && /var/log/dbmail && chown dbmail:dbmail /var/run/dbmail /var/log/dbmail
 VOLUME /etc/postfix
 VOLUME /var/spool/postfix
 EXPOSE 24 25 143 587 993
