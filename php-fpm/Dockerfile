@@ -80,4 +80,4 @@ RUN  rm -rf \
       /tmp/* \
       /var/cache/apk/*
 WORKDIR /srv
-CMD  "php-fpm7 -O -F"
+CMD  ["php-fpm7","-O","-F"]
