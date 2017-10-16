@@ -80,6 +80,5 @@ RUN  rm -rf \
       /usr/share/man \
       /tmp/* \
       /var/cache/apk/*
-ADD  php-fpm/run.sh /usr/local/bin/
 WORKDIR /srv
 CMD  "php-fpm7 -O -F"
