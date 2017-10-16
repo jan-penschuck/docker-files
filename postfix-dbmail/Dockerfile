@@ -1,4 +1,4 @@
-FROM derjudge/archlinux:latest
+FROM base/archlinux:latest
 
 RUN pacman -Sy --noconfirm archlinux-keyring && pacman -Syyu --noconfirm
 RUN pacman -S --noconfirm \
