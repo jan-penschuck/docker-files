@@ -1,13 +1,8 @@
 FROM alpine:edge
-
-MAINTAINER sneak
-
-RUN echo "http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
-
-RUN apk update \
-    && apk upgrade
-
-RUN apk add --no-cache php7 \
+RUN  echo "http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+RUN  apk update \
+        && apk upgrade
+RUN  apk add --no-cache php7 \
         php7-wddx \
         php7-snmp \
         php7-phar \
@@ -72,24 +67,19 @@ RUN apk add --no-cache php7 \
         php7-msgpack \
         php7-mailparse \
         php7-apcu
-
-RUN pear install Net_LDAP2
-
-RUN apk add --no-cache busybox-suid \
+RUN  pear install Net_LDAP2
+RUN  apk add --no-cache busybox-suid \
         vim \
         bash \
         sudo \
         libreoffice \
         python3
-
-RUN pip3 install gpxpy geojson
-
-RUN rm -rf \
+RUN  pip3 install gpxpy geojson
+RUN  rm -rf \
       /usr/share/doc \
       /usr/share/man \
       /tmp/* \
       /var/cache/apk/*
-
-ADD php-fpm/run.sh /usr/local/bin/
-
+ADD  php-fpm/run.sh /usr/local/bin/
 WORKDIR /srv
+CMD  "php-fpm7 -O -F"
