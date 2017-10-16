@@ -1,6 +1,6 @@
 FROM derjudge/archlinux:latest
 
-RUN pacman -Sy --noconfirm archlinux-keyring && pacman -Syyu
+RUN pacman -Sy --noconfirm archlinux-keyring && pacman -Syyu --noconfirm
 RUN pacman -S --noconfirm \
         dbmail \
         libsieve \
