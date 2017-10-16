@@ -2,7 +2,7 @@ FROM derjudge/archlinux:latest
 
 MAINTAINER sneak
 
-RUN pacman -Sy
+RUN pacman -Sy archlinux-keyring && pacman -Syyu
 RUN pacman -S --noconfirm \
         dbmail \
         libsieve \
