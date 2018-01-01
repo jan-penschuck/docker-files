@@ -11,6 +11,7 @@ RUN  apk add --no-cache php7 \
         php7-gd \
         php7-pdo_sqlite \
         php7-imap \
+        php7-fileinfo \
         php7-gmp \
         php7-bcmath \
         php7-enchant \
